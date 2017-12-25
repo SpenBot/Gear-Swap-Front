@@ -3,6 +3,7 @@ Camera Gear Community Rental App -  Front End
 
 Technologies:
 - React
+- Redux
 - React Router
 - Axios
 - Moment
@@ -18,5 +19,5 @@ Unclear Features:
 - Ratings for users?
 - How do you set up an a renting appointment? Maybe a loaner has a set of available times listed on their profile. Then the renter sends a request for an item with
 
-Money Making:
+Monetizing:
 - Either Ads, or there is a service charge for each transaction for both or one of the parties.  
