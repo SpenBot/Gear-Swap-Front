@@ -2,12 +2,17 @@
 ////////////// DEPENDENCIES AND MODULES /////////////////////////////
 /////////////////////////////////////////////////////////////////////
 
-import React, { Component } from 'react';
-import axios from "axios";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import React, { Component } from 'react'
+import axios from "axios"
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
-import './App.css';
+import './App.css'
+import '../SideBar/SideBar.css'
 
+import Layout from '../Layout/Layout.js'
+import DashBar from '../DashBar/DashBar.js'
+import AdBar from '../AdBar/AdBar.js'
+import LandingPage from '../LandingPage/LandingPage.js'
 
 
 
@@ -26,15 +31,18 @@ class App extends Component {
     super(props)
     this.state = {
       user: {
-        username: localStorage.getItem('user'),
-        photo_url: localStorage.getItem('photo'),
-        password: localStorage.getItem('password'),
-        inventory: localStorage.getItem('inventory')
+        // username: localStorage.getItem('user'),
+        // photo_url: localStorage.getItem('photo'),
+        // password: localStorage.getItem('password'),
+        username: "",
+        photo_url: "",
+        password: "",
+        inventory: []
       },
-      searchPhrase: null
+      // searchPhrase: null
     }
 
-    this.logOutUser = this.logOutUser.bind(this)
+    // this.logOutUser = this.logOutUser.bind(this)
 
   }
 
@@ -88,10 +96,10 @@ class App extends Component {
     axios.get(`http://localhost:4000/api/users/spenser.holstein@gmail.com`)
        .then((res) => {
          this.setState({user: res.data})
-         localStorage.setItem("user", res.data.username)
-         localStorage.setItem("photo", res.data.photo_url)
-         localStorage.setItem("password", res.data.password)
-         localStorage.setItem("inventory", res.data.inventory)
+         // localStorage.setItem("user", res.data.username)
+         // localStorage.setItem("photo", res.data.photo_url)
+         // localStorage.setItem("password", res.data.password)
+         // localStorage.setItem("inventory", res.data.inventory)
          console.log(`User ${this.state.user.username} signed in.`)
        })
 
@@ -102,25 +110,45 @@ class App extends Component {
 
 
 
-////////////// RENDER ///////////////////////////////////////////////
+////////////// RENDER LOGIC /////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 
   render() {
 
-
-////////////// RETURN ///////////////////////////////////////////////
+////////////// RENDER RETURN ////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
 
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to Gear Swap</h1>
-          <p>USER: {this.state.user.username}</p>
-          <img src={this.state.user.photo_url} height="100" width="100"/>
-          <p>PASSWORD: {this.state.user.username}</p>
-          <p>Inventory: {this.state.user.inventory} </p>
-        </header>
-      </div>
-    );
+
+      <Router>
+        <div className="App">
+
+          <Layout />
+
+          <div className="SideBar">
+            <DashBar user={this.state.user}/>
+            <AdBar />
+          </div>
+
+
+          <Switch>
+
+            <Route path="/" render={(props) => {
+              return (
+                <div>
+                  <LandingPage />
+                </div>
+              )
+            }}/>
+
+
+          </Switch>
+
+
+        </div>
+      </Router>
+
+    )
 
 
   }
@@ -131,7 +159,7 @@ class App extends Component {
 }
 
 
-////////////// EXPORT ///////////////////////////////////////////////
+////////////// EXPORT MODULE ////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 export default App;
 

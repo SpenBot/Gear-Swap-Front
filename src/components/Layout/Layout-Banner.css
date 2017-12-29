@@ -1,0 +1,58 @@
+
+.Banner {
+  height: 120px;
+  background-color: rgb(135, 247, 125);
+  color: white;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.HeaderLeft{
+  text-align: left;
+  margin-left: 25px;
+}
+
+.HeaderRight{
+  margin-top: 10px;
+  margin-right: 25px;
+  align-items: right;
+  height: 90px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+h1 {
+  font-size: 50px;
+  width: 280px;
+
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+
+.HeaderLeft hr {
+  border: 2px solid white;
+}
+
+h5 {
+  font-size: 20px;
+  margin-top: -5px;
+}
+
+.Banner a {
+  font-size: 16px;
+  width: 100px;
+
+  font-weight: bold;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 8px 40px;
+}
