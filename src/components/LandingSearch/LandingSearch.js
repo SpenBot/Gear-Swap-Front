@@ -34,7 +34,7 @@ class LandingSearch extends Component {
   searchProviders(e) {
     e.preventDefault()
 
-    axios.get(`http://localhost:4000/api/users/${this.state.landingSearchPhrase}`)
+    axios.get(`http://localhost:4000/api/userszipcode/${this.state.landingSearchPhrase}`)
       .then((res) => {
         this.setState({user: res.data})
         // localStorage.setItem("user", res.data.username)

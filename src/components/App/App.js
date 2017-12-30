@@ -10,9 +10,12 @@ import './App.css'
 import '../SideBar/SideBar.css'
 
 import Layout from '../Layout/Layout.js'
+
 import DashBar from '../DashBar/DashBar.js'
 import AdBar from '../AdBar/AdBar.js'
+
 import LandingPage from '../LandingPage/LandingPage.js'
+import UserPage from '../UserPage/UserPage.js'
 
 
 
@@ -123,14 +126,9 @@ class App extends Component {
       <Router>
         <div className="App">
 
-
-
           <Layout />
 
-
-
           <div className="AppMain">
-
 
             <div className="SideBar">
               <DashBar user={this.state.user}/>
@@ -140,6 +138,14 @@ class App extends Component {
 
             <Switch>
 
+              <Route path="/account" render={(props) => {
+                return (
+                  <div>
+                    <UserPage user={this.state.user} />
+                  </div>
+                )
+              }}/>
+
               <Route path="/" render={(props) => {
                 return (
                   <div>
@@ -148,8 +154,8 @@ class App extends Component {
                 )
               }}/>
 
-
             </Switch>
+
 
           </div>
 

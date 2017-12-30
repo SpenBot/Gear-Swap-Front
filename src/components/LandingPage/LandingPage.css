@@ -1,3 +1,8 @@
+.LandingPageDiv {
+  width: 700px;
+  margin-right: 15px;
+}
+
 .LandingPageDiv img{
   margin-bottom: -20px;
 }

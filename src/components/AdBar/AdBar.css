@@ -10,6 +10,6 @@
 
 .AdBar img:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow: 2px 2px 10px gray;
 }

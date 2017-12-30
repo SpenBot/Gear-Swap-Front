@@ -34,11 +34,11 @@ class Layout extends Component {
 
                 <a href='/'>home</a>
                 <vl></vl>
-                <a href='users'>search providers</a>
+                <a href='#'>search providers</a>
                 <vl></vl>
-                <a href='users'>search equipment</a>
+                <a href='#'>search equipment</a>
                 <vl></vl>
-                <a href='users'>my account</a>
+                <a href='/account'>my account</a>
 
           </div>
 
