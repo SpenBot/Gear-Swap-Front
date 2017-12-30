@@ -123,26 +123,38 @@ class App extends Component {
       <Router>
         <div className="App">
 
+
+
           <Layout />
 
-          <div className="SideBar">
-            <DashBar user={this.state.user}/>
-            <AdBar />
+
+
+          <div className="AppMain">
+
+
+            <div className="SideBar">
+              <DashBar user={this.state.user}/>
+              <AdBar />
+            </div>
+
+
+            <Switch>
+
+              <Route path="/" render={(props) => {
+                return (
+                  <div>
+                    <LandingPage />
+                  </div>
+                )
+              }}/>
+
+
+            </Switch>
+
           </div>
 
 
-          <Switch>
 
-            <Route path="/" render={(props) => {
-              return (
-                <div>
-                  <LandingPage />
-                </div>
-              )
-            }}/>
-
-
-          </Switch>
 
 
         </div>

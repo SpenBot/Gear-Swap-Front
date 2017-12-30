@@ -1,15 +1,30 @@
+
+////////////// DEPENDENCIES AND MODULES /////////////////////////////
+/////////////////////////////////////////////////////////////////////
+
 import React, {Component} from 'react';
 
 
+import LandingSearch from '../LandingSearch/LandingSearch.js'
+
+import './LandingPage.css'
+
+
+
+
+////////////// COMPONENT ////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
 
 class LandingPage extends Component {
 
   render() {
 
       return (
-        <div>
+        <div className="LandingPageDiv">
 
-          <h1 className="App-title">Welcome to Gear Swap</h1>
+          <img src="../../../LandingPage-img-1.jpg" alt="welcome" height="403" width="700" />
+
+          <LandingSearch />
 
         </div>
       )
@@ -17,4 +32,13 @@ class LandingPage extends Component {
   }
 }
 
+////////////// EXPORT MODULE ////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+
 export default LandingPage;
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////

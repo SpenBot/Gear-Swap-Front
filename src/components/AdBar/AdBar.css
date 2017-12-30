@@ -1,0 +1,15 @@
+
+.AdBar {
+  margin-top: 20px;
+
+}
+
+.AdBar img {
+  border: 15px solid rgb(227, 66, 39);
+}
+
+.AdBar img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 2px 2px 10px gray;
+}

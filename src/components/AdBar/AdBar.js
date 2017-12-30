@@ -5,7 +5,7 @@
 import React, {Component} from 'react';
 
 
-
+import './AdBar.css'
 
 
 
@@ -19,7 +19,9 @@ class AdBar extends Component {
 
       return (
         <div className="AdBar">
-
+          <a href='https://www.bhphotovideo.com' target="_blank" rel="noopener noreferrer">
+            <img src="../../../BH-ad-1.jpg" alt="B&H promotion"
+            height="200" width="200"/></a>
         </div>
       )
 

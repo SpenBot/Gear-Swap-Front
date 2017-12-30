@@ -3,3 +3,9 @@
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
 }
+
+.AppMain {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

@@ -1,0 +1,27 @@
+.LandingSearchDiv {
+  height: 100px;
+  width: 700px;
+  background-color: rgb(131, 243, 125);
+  border-radius: 10px;
+}
+
+.LandingSearchDiv h4{
+  font-size: 28px;
+  color: white;
+  padding-top: 5px;
+  margin-bottom: 10px;
+}
+
+.LandingSearchText {
+  font-size: 22px;
+  width: 400px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.LandingSearchSubmit {
+  font-size: 22px;
+  color: white;
+  background-color: rgb(255, 219, 14);
+  margin-left: 10px;
+}

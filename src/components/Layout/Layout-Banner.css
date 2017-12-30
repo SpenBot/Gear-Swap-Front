@@ -1,7 +1,7 @@
 
 .Banner {
   height: 120px;
-  background-color: rgb(135, 247, 125);
+  background-color: rgb(131, 243, 125);
   color: white;
 
   display: flex;
@@ -38,7 +38,7 @@ h1 {
   border: 2px solid white;
 }
 
-h5 {
+h2 {
   font-size: 20px;
   margin-top: -5px;
 }
@@ -55,4 +55,10 @@ h5 {
   border: 3px solid white;
   border-radius: 10px;
   padding: 8px 40px;
+}
+
+.Banner a:hover {
+  cursor: pointer;
+  color: rgb(131, 243, 125);
+  background-color: white;
 }

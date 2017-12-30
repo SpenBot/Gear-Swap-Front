@@ -19,7 +19,7 @@ class Layout extends Component {
               <div className="HeaderLeft">
                 <h1>Gear Swap</h1>
                 <hr></hr>
-                <h5>rent production equipment from your local community</h5>
+                <h2>rent production equipment from your local community</h2>
               </div>
 
               <div className="HeaderRight">
