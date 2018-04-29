@@ -22,7 +22,8 @@ class LandingPage extends Component {
       return (
         <div className="LandingPageDiv">
 
-          <img src="../../../LandingPage-img-1.jpg" alt="welcome" height="403" width="700" />
+          {/* <img src="../../../LandingPage-img-1.jpg" alt="welcome" height="403" width="700" /> */}
+          <img src="./LandingPage-img-1.jpg" alt="welcome" height="403" width="700" />
 
           <LandingSearch />
 
