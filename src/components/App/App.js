@@ -67,10 +67,9 @@ class App extends Component {
   }
 
 
-
   signInUser(e) {
     e.preventDefault()
-    axios.get(`https://gear-swap-heroku.herokuapp.com/api/users/${this.state.searchPhrase}`)
+    axios.get(`https://mighty-shelf-35127.herokuapp.com/api/users${this.state.searchPhrase}`)
       .then((res) => {
         this.setState({user: res.data})
       })
@@ -91,7 +90,7 @@ class App extends Component {
 
   componentDidMount() {
 
-    axios.get(`https://gear-swap-heroku.herokuapp.com/api/users/spenser.holstein@gmail.com`)
+    axios.get(`https://mighty-shelf-35127.herokuapp.com/api/users/spenser.holstein@gmail.com`)
        .then((res) => {
          this.setState({user: res.data})
          console.log(`User ${this.state.user.username} signed in.`)
