@@ -16,21 +16,12 @@ class DashBar extends Component {
 
 
 
+
 ////////////// RENDER LOGIC /////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 
   render() {
 
-    // let inventoryList = this.props.user.inventory.map((thing) => {
-    //   return (
-    //   <ul>
-    //     <li>ITEM: {thing.item}</li>
-    //     <li>TYPE: {thing.type}</li>
-    //     <li>CONDITION: {thing.condition}</li>
-    //     <li>PRICE: ${thing.price}.00</li>
-    //   </ul>
-    //   )
-    // })
 
 
 ////////////// RENDER RETURN ////////////////////////////////////////
@@ -67,13 +58,7 @@ class DashBar extends Component {
             <p> items in que: 2</p>
           </div>
 
-
-
-          {/* <p>PASSWORD: {this.props.user.password}</p> */}
-          {/* {inventoryList} */}
-
-
-          <a href="#">full details</a>
+          <a href="/account">full details</a>
         </div>
       )
 

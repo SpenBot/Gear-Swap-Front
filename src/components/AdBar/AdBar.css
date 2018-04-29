@@ -1,11 +1,11 @@
 
 .AdBar {
-  margin-top: 20px;
-
 }
 
 .AdBar img {
-  border: 15px solid rgb(227, 66, 39);
+  /* border: 15px solid rgb(227, 66, 39); */
+  box-shadow: 1px 1px 4px gray;
+  margin-top: 20px;
 }
 
 .AdBar img:hover {

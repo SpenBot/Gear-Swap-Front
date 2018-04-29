@@ -10,12 +10,16 @@ import './App.css'
 import '../SideBar/SideBar.css'
 
 import Layout from '../Layout/Layout.js'
+import Footer from '../Footer/Footer.js'
 
 import DashBar from '../DashBar/DashBar.js'
 import AdBar from '../AdBar/AdBar.js'
 
 import LandingPage from '../LandingPage/LandingPage.js'
 import UserPage from '../UserPage/UserPage.js'
+import ProvidersPage from '../ProvidersPage/ProvidersPage.js'
+import EquipmentPage from '../EquipmentPage/EquipmentPage.js'
+
 
 
 
@@ -28,25 +32,25 @@ import UserPage from '../UserPage/UserPage.js'
 class App extends Component {
 
 
+
 //////////// CONSTRUCTOR ////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
 
   constructor(props) {
     super(props)
     this.state = {
       user: {
-        // username: localStorage.getItem('user'),
-        // photo_url: localStorage.getItem('photo'),
-        // password: localStorage.getItem('password'),
-        username: "",
-        photo_url: "",
-        password: "",
+
+        username: '',
+        zipcode: '',
+        photo_url: '',
+        password: '',
         inventory: []
       },
       // searchPhrase: null
     }
 
-    // this.logOutUser = this.logOutUser.bind(this)
-
+    this.logOutUser = this.logOutUser.bind(this)
   }
 
 
@@ -60,24 +64,15 @@ class App extends Component {
   logOutUser(e) {
     e.preventDefault();
     this.setState({user: ''})
-    localStorage.setItem('user', '')
-    localStorage.setItem('photo', '')
-    localStorage.setItem('password', '')
-    console.log("User logged out.")
   }
 
 
 
   signInUser(e) {
     e.preventDefault()
-
-    axios.get(`http://localhost:4000/api/users/${this.state.searchPhrase}`)
+    axios.get(`https://gear-swap-heroku.herokuapp.com/api/users/${this.state.searchPhrase}`)
       .then((res) => {
         this.setState({user: res.data})
-        localStorage.setItem("user", res.data.username)
-        localStorage.setItem("photo", res.data.photo_url)
-        localStorage.setItem("password", res.data.password)
-        console.log(`User ${this.state.user.username} signed in.`)
       })
     }
 
@@ -96,17 +91,18 @@ class App extends Component {
 
   componentDidMount() {
 
-    axios.get(`http://localhost:4000/api/users/spenser.holstein@gmail.com`)
+    axios.get(`https://gear-swap-heroku.herokuapp.com/api/users/spenser.holstein@gmail.com`)
        .then((res) => {
          this.setState({user: res.data})
-         // localStorage.setItem("user", res.data.username)
-         // localStorage.setItem("photo", res.data.photo_url)
-         // localStorage.setItem("password", res.data.password)
-         // localStorage.setItem("inventory", res.data.inventory)
          console.log(`User ${this.state.user.username} signed in.`)
+         console.log(this.state.user.zipcode)
+         console.log(this.state.user.password)
+         console.log(this.state.user.inventory)
+         console.log(this.state.user)
        })
 
      }
+
 
 
 
@@ -118,6 +114,8 @@ class App extends Component {
 
   render() {
 
+
+
 ////////////// RENDER RETURN ////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 
@@ -126,42 +124,84 @@ class App extends Component {
       <Router>
         <div className="App">
 
-          <Layout />
 
-          <div className="AppMain">
-
-            <div className="SideBar">
-              <DashBar user={this.state.user}/>
-              <AdBar />
-            </div>
+          <Layout user={this.state.user} logOutUser={this.logOutUser}/>
 
 
             <Switch>
 
+
+
               <Route path="/account" render={(props) => {
                 return (
-                  <div>
+                  <div className="AppMain">
+
+                    <div className="SideBar">
+                      <AdBar />
+                    </div>
+
                     <UserPage user={this.state.user} />
+
                   </div>
                 )
               }}/>
 
-              <Route path="/" render={(props) => {
+
+
+              <Route path="/providers" render={(props) => {
                 return (
-                  <div>
-                    <LandingPage />
+                  <div className="AppMain">
+
+                    <div className="SideBar">
+                      <DashBar user={this.state.user} />
+                      <AdBar />
+                    </div>
+
+                    <ProvidersPage />
+
                   </div>
                 )
               }}/>
+
+
+
+              <Route path="/equipment" render={(props) => {
+                return (
+                  <div className="AppMain">
+
+                    <div className="SideBar">
+                      <DashBar user={this.state.user} />
+                      <AdBar />
+                    </div>
+
+                    <EquipmentPage />
+
+                  </div>
+                )
+              }}/>
+
+
+
+              <Route path="/" render={(props) => {
+                return (
+                  <div className="AppMain">
+
+                    <div className="SideBar">
+                      <DashBar user={this.state.user}/>
+                      <AdBar />
+                    </div>
+
+                    <LandingPage />
+
+                  </div>
+                )
+              }}/>
+
 
             </Switch>
 
 
-          </div>
-
-
-
-
+          {/* <Footer /> */}
 
         </div>
       </Router>

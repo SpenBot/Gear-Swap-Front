@@ -1,12 +1,59 @@
+
+////////////// DEPENDENCIES AND MODULES /////////////////////////////
+/////////////////////////////////////////////////////////////////////
+
 import React, {Component} from 'react';
 
 import './Layout-Banner.css';
 import './Layout-NavBar.css';
 
 
+
+
+////////////// COMPONENT ////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+
 class Layout extends Component {
 
+
+
+
+
+
+
+
+////////////// RENDER LOGIC /////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+
   render() {
+
+
+    let logButton = null;
+
+    if (this.props.user.username != '') {
+      logButton =
+      <div className="HeaderRight">
+        <a href="#">sign-up</a>
+        {/* <a href="#">log-out</a> */}
+
+        <p className="SignButton" onClick={(e) => this.props.logOutUser(e)}>log-out</p>
+
+
+      </div>
+
+    } else if (this.props.user.username == '') {
+      logButton =
+      <div className="HeaderRight">
+        <a href="#">sign-up</a>
+        <a href="#">log-in</a>
+      </div>
+    }
+
+
+
+
+////////////// RENDER RETURN ////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
 
       return (
 
@@ -17,15 +64,12 @@ class Layout extends Component {
             <div className="Banner">
 
               <div className="HeaderLeft">
-                <h1>Gear Swap</h1>
+                <h1>GearSwap</h1>
                 <hr></hr>
                 <h2>rent production equipment from your local community</h2>
               </div>
 
-              <div className="HeaderRight">
-                <a href="#">sign-up</a>
-                <a href="#">log-in</a>
-              </div>
+              {logButton}
 
             </div>
 
@@ -33,11 +77,11 @@ class Layout extends Component {
             <div className="NavBar">
 
                 <a href='/'>home</a>
-                <vl></vl>
-                <a href='#'>search providers</a>
-                <vl></vl>
-                <a href='#'>search equipment</a>
-                <vl></vl>
+                <div className="vl"></div>
+                <a href='/providers'>search providers</a>
+                <div className="vl"></div>
+                <a href='/equipment'>search equipment</a>
+                <div className="vl"></div>
                 <a href='/account'>my account</a>
 
           </div>
@@ -50,4 +94,12 @@ class Layout extends Component {
   }
 }
 
+
+////////////// EXPORT MODULE ////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+
 export default Layout;
+
+
+
+/////////////////////////////////////////////////////////////////////

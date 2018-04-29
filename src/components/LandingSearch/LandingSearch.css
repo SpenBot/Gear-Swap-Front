@@ -25,3 +25,19 @@
   background-color: rgb(255, 219, 14);
   margin-left: 10px;
 }
+
+.FoundProviderDiv {
+  background-color: rgb(71, 83, 100);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.FoundProviderDiv h3 {
+  color: white;
+}
+
+.ProviderIventoryDiv {
+  background-color: rgb(131, 243, 125);
+  width: 400px;
+  margin: 0 auto;
+}
